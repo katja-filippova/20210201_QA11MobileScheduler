@@ -2,6 +2,9 @@ package app;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseHelper {
 
@@ -32,4 +35,8 @@ public class BaseHelper {
         driver.hideKeyboard();
     }
 
+    public WebElement waitForElement(By locator, int timeToWait) {
+        return new WebDriverWait(driver, timeToWait)
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 }
