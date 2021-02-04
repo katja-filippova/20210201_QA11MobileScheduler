@@ -107,31 +107,39 @@ public class EventHelper extends BaseHelper {
     }
     private void moveElementToRight(By locator) {
         TouchAction action = new TouchAction(driver);
+        //get activity points
         Dimension size = driver.manage().window().getSize();
         int leftPoint = (int) (size.width * 0.2);
         int rightPoint = (int) (size.width * 0.5);
-        int y = size.height / 5;
 
-       driver.findElement(locator);
+        WebElement element = driver.findElement(locator);
 
-        action.longPress(PointOption.point(leftPoint, y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
-                .moveTo(PointOption.point(rightPoint, y))
+        int upperY = element.getLocation().getY();
+        int lowerY = upperY + element.getSize().getHeight();
+        int middleY = (upperY + lowerY) / 2;
+
+        action
+                .longPress(PointOption.point(leftPoint, middleY))
+                .moveTo(PointOption.point(rightPoint, middleY))
                 .release()
                 .perform();
     }
     private void moveElementToLeft(By locator) {
         TouchAction action = new TouchAction(driver);
+
         Dimension size = driver.manage().window().getSize();
         int leftPoint = (int) (size.width * 0.2);
         int rightPoint = (int) (size.width * 0.5);
-        int y = size.height / 5;
 
-        driver.findElement(locator);
+        WebElement element = driver.findElement(locator);
 
-        action.longPress(PointOption.point(rightPoint, y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
-                .moveTo(PointOption.point(leftPoint, y))
+        int upperY = element.getLocation().getY();
+        int lowerY = upperY + element.getSize().getHeight();
+        int middleY = (upperY + lowerY) / 2;
+
+        action
+                .longPress(PointOption.point(rightPoint, middleY))
+                .moveTo(PointOption.point(leftPoint, middleY))
                 .release()
                 .perform();
     }
