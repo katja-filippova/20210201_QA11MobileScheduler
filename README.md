@@ -7,7 +7,14 @@ In the test package you will find basic tests for this app - creation of new use
 # To run the project user should have:
 1. Appium server opened;
 2. In command line find and open your emulator:
+```bash
 emulator -list-avds
+```
+```bash
 emulator @name_of_your_emulator
+```
 3. use Intellij IDEA to run the project or use command line:
-gradle name_of_your_test_suite (from your build.gradle file) 
+```bash
+gradle name_of_your_test_suite
+```
+(from your build.gradle file) 
