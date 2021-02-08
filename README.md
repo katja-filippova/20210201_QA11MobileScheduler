@@ -13,7 +13,7 @@ emulator -list-avds
 ```bash
 emulator @name_of_your_emulator
 ```
-3. use Intellij IDEA to run the project or use command line:
+3. Use Intellij IDEA to run the project or use command line:
 ```bash
 gradle name_of_your_test_suite
 ```
