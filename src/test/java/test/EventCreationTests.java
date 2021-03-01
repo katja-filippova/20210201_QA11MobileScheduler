@@ -32,7 +32,7 @@ public class EventCreationTests extends TestBase {
     public void eventCreationTestWithSwipeLeftAndDateToChoose() {
         app.event().initEventCreation();
         app.event().tapOnPencilButton();
-        app.event().selectDate("future","February", "5");
+        app.event().selectDate("future","FEBRUARY", "5");
         app.event().fillInTitleForm("Yoga");
         app.event().fillInTypeForm("Appointment");
         app.event().hideKeyboard();

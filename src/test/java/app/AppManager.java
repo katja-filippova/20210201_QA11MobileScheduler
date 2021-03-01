@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class AppManager {
     AppiumDriver driver;
     DesiredCapabilities caps;
-
     UserHelper user;
     EventHelper event;
 
